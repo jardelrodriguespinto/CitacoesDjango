@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Citações</title>
+        <meta name="description" content="App contendo citações de alguns autores">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="{% static 'main.css' %}">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Citações</h1>
+        </div>
+        <div class="main-content">
+            {% for citacao in citacoes reversed%}
+            <div class="quotes">
+                <h2>Citações</h2>
+                <q>{{citacao.citacao}}</q>
+                <address class="autor">{{citacao.autor}}</address>
+                <p>{{citacao.data_da_publicacao}}</p>
+            </div>
+            {% endfor %}    
+            
+        </div>
+        
+        
+    </body>
+</html>
